@@ -18,6 +18,9 @@ dependencies = [
 ]
 dynamic = ["version", "readme"]
 
+[tool.setuptools]
+packages = ["paper_ecg_enhancer"]
+
 [tool.setuptools.dynamic]
 version = {attr = "paper_ecg_enhancer.VERSION"}
 readme = {file = "README.md", content-type = "text/markdown"}

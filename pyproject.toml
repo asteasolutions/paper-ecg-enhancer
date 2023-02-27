@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "paper-ecg-enhancer"
+authors = [
+    {name = "Radan Ganchev", email = "rganchev@asteasolutions.com"},
+]
+description = "Enhancement of Imperfectly Acquired Images of ECG Printouts"
+requires-python = ">=3.8"
+keywords = ["ecg", "image processing"]
+license = {text = "CC BY-NC-SA"}
+dependencies = [
+    "numpy",
+    "opencv-python",
+    "pipetools",
+    "scipy"
+]
+dynamic = ["version", "readme"]
+
+[tool.setuptools.dynamic]
+version = {attr = "paper_ecg_enhancer.VERSION"}
+readme = {file = "README.md", content-type = "text/markdown"}

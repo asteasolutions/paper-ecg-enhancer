@@ -7,6 +7,7 @@ def normalize_channel(image, ksize):
   kernel = cv2.getStructuringElement(cv2.MORPH_RECT, ksize)
   close = cv2.morphologyEx(image, cv2.MORPH_CLOSE, kernel)
   div = np.float32(image) / (close)
+  div[np.isnan(div)] = 0
   result = np.uint8(cv2.normalize(div, div, 0, 255, cv2.NORM_MINMAX))
   return result
 
@@ -218,7 +219,7 @@ def find_wavelen_stats(img, wavelen_min, wavelen_max):
 
 def to_absolute(polygon,img):
   """
-    Assuming polygon contains four points in relarive coordinates, 
+    Assuming polygon contains four points in relarive coordinates,
     convert them to absolute coordinates with respect to the image size
   """
   print("To absolute!")

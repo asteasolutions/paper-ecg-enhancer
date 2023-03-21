@@ -1,3 +1,5 @@
+(C) 2023 Astea Solutions, AD
+
 ## creative commons
 
 # Attribution-NonCommercial-ShareAlike 4.0 International
